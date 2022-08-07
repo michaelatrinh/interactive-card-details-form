@@ -1,4 +1,5 @@
-@import "../src/styles/globals.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .formWrapper {
   display: flex;
@@ -6,7 +7,12 @@
   justify-content: space-evenly;
 
   width: 85vw;
-  height: 50vh;
+  height: 60vh;
+
+  @include screen-mobile {
+    position: absolute;
+    bottom: 0;
+  }
 
   .inputLayout {
     display: flex;
@@ -26,10 +32,13 @@
     }
 
     input {
-      height: 2rem;
+      height: 3rem;
       border: 1px solid rgba(33, 9, 47, 0.25);
-      border-radius: 0.25rem;
-      padding-left: 0.75rem;
+      border-radius: 0.5rem;
+      padding-left: 1rem;
+
+      font-family: $typography-main-font;
+      font-size: 1rem;
 
       &::placeholder {
         font-family: $typography-main-font;
@@ -43,7 +52,7 @@
     flex-direction: row;
     justify-content: space-between;
 
-    &-exp {
+    &_exp {
       display: flex;
       flex-direction: column;
       width: 48%;
@@ -61,16 +70,19 @@
         margin-top: 0.5rem;
       }
 
-      &-inputs {
+      &_inputs {
         display: flex;
         justify-content: space-between;
 
         input {
-          height: 2rem;
+          height: 3rem;
           width: 33%;
           border: 1px solid rgba(33, 9, 47, 0.25);
-          border-radius: 0.25rem;
-          padding-left: 0.75rem;
+          border-radius: 0.5rem;
+          padding-left: 1rem;
+
+          font-family: $typography-main-font;
+          font-size: 1rem;
 
           &::placeholder {
             font-family: $typography-main-font;
@@ -80,7 +92,7 @@
       }
     }
 
-    &-cvc {
+    &_cvc {
       display: flex;
       flex-direction: column;
       width: 48%;
@@ -92,11 +104,14 @@
       }
 
       input {
-        height: 2rem;
+        height: 3rem;
         width: 89.5%;
         border: 1px solid rgba(33, 9, 47, 0.25);
-        border-radius: 0.25rem;
-        padding-left: 0.75rem;
+        border-radius: 0.5rem;
+        padding-left: 1rem;
+
+        font-family: $typography-main-font;
+        font-size: 1rem;
 
         &::placeholder {
           font-family: $typography-main-font;
@@ -107,13 +122,17 @@
   }
 
   .confirmBtn {
-    height: 2rem;
+    height: 3rem;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     background-color: $neutral-very-dark-violet;
 
     font-family: $typography-main-font;
     color: $neutral-white;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 

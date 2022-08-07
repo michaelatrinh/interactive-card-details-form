@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.cardsWrapper {
+  position: relative;
+  width: 100vw;
+  height: 40vh;
+
+  .cardFront {
+    @include screen-mobile {
+      position: relative;
+      left: 1rem;
+      width: 75vw;
+      height: 100%;
+
+      img:first-of-type {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+
+      img:last-of-type {
+        position: absolute;
+        bottom: 33%;
+        left: 1rem;
+        width: 3.5rem;
+      }
+
+      .creditCardNumber {
+        font-family: $typography-main-font;
+        font-size: 22px;
+        color: $neutral-white;
+      }
+    }
+  }
+}

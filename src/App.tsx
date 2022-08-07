@@ -1,31 +1,22 @@
-import React, { useReducer } from "react";
-import "./App.scss";
+import React, { useEffect, useReducer } from "react";
+import "./styles/App.scss";
 import BgMobile from "./images/bg-main-mobile.png";
 
-type CardInfo = {
-  name: string;
-  number: number;
-  eMM: number;
-  eYY: number;
-  cvc: number;
-};
+import Form from "./components/form";
+import { invalidMsgs } from "./components/form";
+import Cards from "./components/cards";
+import { CardProps } from "./components/cards";
 
-const initialState: CardInfo = {
+const initialState: CardProps = {
   name: "",
-  number: 0,
+  number: "0000 0000 0000 0000",
   eMM: 0,
   eYY: 0,
   cvc: 0,
 };
 
-const mutatedState = {
+export const mutatedState = {
   newState: initialState,
-};
-
-const invalidMsgs = {
-  invalidName: "",
-  invalidNumber: "",
-  invalidExpiry: "",
 };
 
 const ACTIONS = {
@@ -78,92 +69,54 @@ function handleSubmit() {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  useEffect(() => {}, [state]);
+
   return (
     <>
-      <img src={BgMobile} alt="bg" />
-      <form onSubmit={handleSubmit} className="formWrapper">
-        <label className="inputLayout">
-          <span>CARDHOLDER NAME</span>
-          <input
-            type="text"
-            placeholder="e.g. Jane Appleseed"
-            onChange={(e) =>
-              dispatch({
-                type: ACTIONS.CHANGE_NAME,
-                payload: { name: e.target.value },
-              })
-            }
-          />
-        </label>
+      <img
+        src={BgMobile}
+        alt="bg"
+        style={{
+          position: "absolute",
+          zIndex: -1,
+        }}
+      />
 
-        <label className="inputLayout">
-          <span>CARD NUMBER</span>
-          <input
-            type="text"
-            placeholder="e.g. 1234 5678 9123 0000"
-            maxLength={16}
-            pattern="\d*"
-            onChange={(e) =>
-              dispatch({
-                type: ACTIONS.CHANGE_NUMBER,
-                payload: { number: e.target.value },
-              })
-            }
-          />
-          <span>{invalidMsgs.invalidNumber} &nbsp;</span>
-        </label>
+      <Cards />
 
-        <div className="bottomInputLayout">
-          <label className="bottomInputLayout-exp">
-            <span>EXP. DATE {"(MM/YY)"}</span>
-            <div className="bottomInputLayout-exp-inputs">
-              <input
-                type="text"
-                placeholder="MM"
-                maxLength={2}
-                pattern="^[0][1-9]$|^[1][0-2]$"
-                onChange={(e) =>
-                  dispatch({
-                    type: ACTIONS.CHANGE_MM,
-                    payload: { eMM: e.target.value },
-                  })
-                }
-              />
-              <input
-                type="text"
-                placeholder="YY"
-                maxLength={2}
-                pattern="^[2-9][2-9]$|^[3-9][0-9]$"
-                onChange={(e) =>
-                  dispatch({
-                    type: ACTIONS.CHANGE_YY,
-                    payload: { eYY: e.target.value },
-                  })
-                }
-              />
-            </div>
-            <span>{invalidMsgs.invalidExpiry} &nbsp;</span>
-          </label>
-
-          <label className="bottomInputLayout-cvc">
-            <span>CVC</span>
-            <input
-              type="text"
-              placeholder="e.g. 123"
-              maxLength={3}
-              pattern="\d*"
-              onChange={(e) =>
-                dispatch({
-                  type: ACTIONS.CHANGE_CVC,
-                  payload: { cvc: e.target.value },
-                })
-              }
-            />
-          </label>
-        </div>
-
-        <input type="submit" className="confirmBtn" value="Confirm" />
-      </form>
+      <Form
+        handleSubmit={handleSubmit}
+        onChangeName={(e) =>
+          dispatch({
+            type: ACTIONS.CHANGE_NAME,
+            payload: { name: e.target.value },
+          })
+        }
+        onChangeNumber={(e) =>
+          dispatch({
+            type: ACTIONS.CHANGE_NUMBER,
+            payload: { number: e.target.value },
+          })
+        }
+        onChangeMM={(e) =>
+          dispatch({
+            type: ACTIONS.CHANGE_MM,
+            payload: { eMM: e.target.value },
+          })
+        }
+        onChangeYY={(e) =>
+          dispatch({
+            type: ACTIONS.CHANGE_YY,
+            payload: { eYY: e.target.value },
+          })
+        }
+        onChangeCVC={(e) =>
+          dispatch({
+            type: ACTIONS.CHANGE_CVC,
+            payload: { cvc: e.target.value },
+          })
+        }
+      />
     </>
   );
 }
