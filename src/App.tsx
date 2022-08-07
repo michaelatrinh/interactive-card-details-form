@@ -8,15 +8,15 @@ import Cards from "./components/cards";
 import { CardProps } from "./components/cards";
 
 const initialState: CardProps = {
-  name: "",
+  name: "JANE APPLESEED",
   number: "0000 0000 0000 0000",
-  eMM: 0,
-  eYY: 0,
-  cvc: 0,
+  eMM: "00",
+  eYY: "00",
+  cvc: "000"
 };
 
 export const mutatedState = {
-  newState: initialState,
+  newState: initialState
 };
 
 const ACTIONS = {
@@ -24,7 +24,7 @@ const ACTIONS = {
   CHANGE_NUMBER: "updateNumber",
   CHANGE_MM: "updateMM",
   CHANGE_YY: "updateYY",
-  CHANGE_CVC: "updateCVC",
+  CHANGE_CVC: "updateCVC"
 };
 
 function reducer(state: string | number, action: any) {
@@ -78,7 +78,7 @@ function App() {
         alt="bg"
         style={{
           position: "absolute",
-          zIndex: -1,
+          zIndex: -1
         }}
       />
 
@@ -89,31 +89,31 @@ function App() {
         onChangeName={(e) =>
           dispatch({
             type: ACTIONS.CHANGE_NAME,
-            payload: { name: e.target.value },
+            payload: { name: e.target.value }
           })
         }
         onChangeNumber={(e) =>
           dispatch({
             type: ACTIONS.CHANGE_NUMBER,
-            payload: { number: e.target.value },
+            payload: { number: e.target.value }
           })
         }
         onChangeMM={(e) =>
           dispatch({
             type: ACTIONS.CHANGE_MM,
-            payload: { eMM: e.target.value },
+            payload: { eMM: e.target.value }
           })
         }
         onChangeYY={(e) =>
           dispatch({
             type: ACTIONS.CHANGE_YY,
-            payload: { eYY: e.target.value },
+            payload: { eYY: e.target.value }
           })
         }
         onChangeCVC={(e) =>
           dispatch({
             type: ACTIONS.CHANGE_CVC,
-            payload: { cvc: e.target.value },
+            payload: { cvc: e.target.value }
           })
         }
       />
