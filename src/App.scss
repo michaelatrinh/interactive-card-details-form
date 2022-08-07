@@ -1,0 +1,123 @@
+@import "../src/styles/globals.scss";
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  width: 85vw;
+  height: 50vh;
+
+  .inputLayout {
+    display: flex;
+    flex-direction: column;
+
+    span:first-of-type {
+      font-family: $typography-main-font;
+      font-size: 14px;
+      margin-bottom: 0.5rem;
+    }
+
+    span:last-child {
+      font-family: $typography-main-font;
+      font-size: 11px;
+      color: $primary-red;
+      margin-top: 0.5rem;
+    }
+
+    input {
+      height: 2rem;
+      border: 1px solid rgba(33, 9, 47, 0.25);
+      border-radius: 0.25rem;
+      padding-left: 0.75rem;
+
+      &::placeholder {
+        font-family: $typography-main-font;
+        opacity: 0.33;
+      }
+    }
+  }
+
+  .bottomInputLayout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-exp {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+
+      span:first-of-type {
+        font-family: $typography-main-font;
+        font-size: 14px;
+        margin-bottom: 0.5rem;
+      }
+
+      span:last-child {
+        font-family: $typography-main-font;
+        font-size: 11px;
+        color: $primary-red;
+        margin-top: 0.5rem;
+      }
+
+      &-inputs {
+        display: flex;
+        justify-content: space-between;
+
+        input {
+          height: 2rem;
+          width: 33%;
+          border: 1px solid rgba(33, 9, 47, 0.25);
+          border-radius: 0.25rem;
+          padding-left: 0.75rem;
+
+          &::placeholder {
+            font-family: $typography-main-font;
+            opacity: 0.33;
+          }
+        }
+      }
+    }
+
+    &-cvc {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+
+      span {
+        font-family: $typography-main-font;
+        font-size: 14px;
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        height: 2rem;
+        width: 89.5%;
+        border: 1px solid rgba(33, 9, 47, 0.25);
+        border-radius: 0.25rem;
+        padding-left: 0.75rem;
+
+        &::placeholder {
+          font-family: $typography-main-font;
+          opacity: 0.33;
+        }
+      }
+    }
+  }
+
+  .confirmBtn {
+    height: 2rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: $neutral-very-dark-violet;
+
+    font-family: $typography-main-font;
+    color: $neutral-white;
+  }
+}
+
+input:invalid {
+  border-radius: 0.25rem;
+  outline: 2px solid $primary-red;
+}
