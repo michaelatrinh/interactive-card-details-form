@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import "./styles/App.scss";
 import BgMobile from "./images/bg-main-mobile.png";
 
@@ -6,6 +6,7 @@ import Form from "./components/form";
 import { invalidMsgs } from "./components/form";
 import Cards from "./components/cards";
 import { CardProps } from "./components/cards";
+import ThankYou from "./components/thankYou";
 
 const initialState: CardProps = {
   name: "JANE APPLESEED",
@@ -79,17 +80,19 @@ function reducer(state: string | number, action: any) {
   }
 }
 
-function handleSubmit() {
-  return null;
-}
-
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [confirmed, setConfirmed] = useState<boolean>(false);
 
   useEffect(() => {}, [state]);
 
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>): void {
+    e.preventDefault();
+    setConfirmed(true);
+  }
+
   return (
-    <>
+    <React.Fragment>
       <img
         src={BgMobile}
         alt="bg"
@@ -101,40 +104,44 @@ function App() {
 
       <Cards />
 
-      <Form
-        handleSubmit={handleSubmit}
-        onChangeName={(e) =>
-          dispatch({
-            type: ACTIONS.CHANGE_NAME,
-            payload: { name: e.target.value }
-          })
-        }
-        onChangeNumber={(e) =>
-          dispatch({
-            type: ACTIONS.CHANGE_NUMBER,
-            payload: { number: e.target.value }
-          })
-        }
-        onChangeMM={(e) =>
-          dispatch({
-            type: ACTIONS.CHANGE_MM,
-            payload: { eMM: e.target.value }
-          })
-        }
-        onChangeYY={(e) =>
-          dispatch({
-            type: ACTIONS.CHANGE_YY,
-            payload: { eYY: e.target.value }
-          })
-        }
-        onChangeCVC={(e) =>
-          dispatch({
-            type: ACTIONS.CHANGE_CVC,
-            payload: { cvc: e.target.value }
-          })
-        }
-      />
-    </>
+      {confirmed ? (
+        <ThankYou handleBtnClick={() => setConfirmed(false)} />
+      ) : (
+        <Form
+          handleSubmit={(e) => handleSubmit(e)}
+          onChangeName={(e) =>
+            dispatch({
+              type: ACTIONS.CHANGE_NAME,
+              payload: { name: e.target.value }
+            })
+          }
+          onChangeNumber={(e) =>
+            dispatch({
+              type: ACTIONS.CHANGE_NUMBER,
+              payload: { number: e.target.value }
+            })
+          }
+          onChangeMM={(e) =>
+            dispatch({
+              type: ACTIONS.CHANGE_MM,
+              payload: { eMM: e.target.value }
+            })
+          }
+          onChangeYY={(e) =>
+            dispatch({
+              type: ACTIONS.CHANGE_YY,
+              payload: { eYY: e.target.value }
+            })
+          }
+          onChangeCVC={(e) =>
+            dispatch({
+              type: ACTIONS.CHANGE_CVC,
+              payload: { cvc: e.target.value }
+            })
+          }
+        />
+      )}
+    </React.Fragment>
   );
 }
 

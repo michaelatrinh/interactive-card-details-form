@@ -2,7 +2,7 @@ import React from "react";
 import scss from "../form/form.module.scss";
 
 interface FormProps {
-  handleSubmit: () => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onChangeNumber: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onChangeMM: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -13,7 +13,7 @@ interface FormProps {
 export const invalidMsgs = {
   invalidName: "",
   invalidNumber: "",
-  invalidExpiry: "",
+  invalidExpiry: ""
 };
 
 function Form({
@@ -22,7 +22,7 @@ function Form({
   onChangeNumber,
   onChangeMM,
   onChangeYY,
-  onChangeCVC,
+  onChangeCVC
 }: FormProps) {
   return (
     <form onSubmit={handleSubmit} className={scss.formWrapper}>

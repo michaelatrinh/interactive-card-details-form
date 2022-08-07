@@ -1,0 +1,53 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 85vw;
+  height: 60vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .flexWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    h1 {
+      margin: 0;
+      font-family: $typography-main-font;
+    }
+
+    p {
+      margin: 0;
+      font-family: $typography-main-font;
+      color: $neutral-dark-grayish-violet;
+    }
+
+    button {
+      width: 100%;
+      height: 3rem;
+
+      border: none;
+      border-radius: 0.5rem;
+
+      background-color: $neutral-very-dark-violet;
+      color: $neutral-white;
+
+      font-family: $typography-main-font;
+      font-size: 1rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
