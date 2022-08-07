@@ -7,7 +7,7 @@ import { mutatedState } from "../../App";
 
 export type CardProps = {
   name: string;
-  number: string | number;
+  number: string | string[];
   eMM: string | number;
   eYY: string | number;
   cvc: string | number;
@@ -32,6 +32,7 @@ function Cards() {
           </span>
         </div>
       </div>
+
       {/* Back Card */}
       <div className={scss.cardBackWrapper}>
         <div className={scss.cardBack}>

@@ -30,13 +30,30 @@ const ACTIONS = {
 function reducer(state: string | number, action: any) {
   switch (action.type) {
     case "updateName":
-      return (mutatedState.newState.name = action.payload.name);
+      let uppercaseName = action.payload.name.toUpperCase();
+      return (mutatedState.newState.name = uppercaseName);
     case "updateNumber":
       if (isNaN(action.payload.number))
         invalidMsgs.invalidNumber = "Wrong format, numbers only";
       if (!isNaN(action.payload.number)) {
         invalidMsgs.invalidNumber = "";
-        return (mutatedState.newState.number = action.payload.number);
+
+        let v: string = action.payload.number
+          .replace(/\s+/g, "")
+          .replace(/[^0-9]/gi, "");
+        let matches: RegExpMatchArray | null = v.match(/\d{1,16}/g);
+        let match: string = (matches && matches[0]) || "";
+        let parts: string[] = [];
+
+        for (let i: number = 0, len = match.length; i < len; i += 4) {
+          parts.push(match.substring(i, i + 4));
+        }
+
+        if (parts.length) {
+          return (mutatedState.newState.number = parts.join(" "));
+        } else {
+          return state;
+        }
       }
       break;
     case "updateMM":
