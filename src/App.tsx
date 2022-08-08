@@ -92,7 +92,7 @@ function App() {
   }
 
   useEffect(() => {
-    if (window.innerWidth >= 1440) setIsDesktop(true);
+    if (window.innerWidth >= 1200) setIsDesktop(true);
   }, []);
 
   return (
