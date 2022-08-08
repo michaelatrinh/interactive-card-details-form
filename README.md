@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Here](https://michaelatrinh.github.io/interative-card-details-form)
+- Live Site URL: [Here](https://michaelatrinh.github.io/interactive-card-details-form)
 
 ## My process
 
@@ -44,9 +44,11 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
+- [TypeScript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/) - JS library
 - [React Hooks](https://reactjs.org/docs/hooks-intro.html) - State changes
 - [Sass](https://sass-lang.com/) - For styles
+- [RegEx](https://regex101.com/)
 
 ### What I learned
 
