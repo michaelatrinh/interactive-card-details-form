@@ -12,6 +12,14 @@
   justify-content: center;
   align-items: center;
 
+  @include screen-desktop {
+    position: absolute;
+    top: 12rem;
+    right: 14rem;
+
+    width: 30%;
+  }
+
   .flexWrap {
     display: flex;
     flex-direction: column;

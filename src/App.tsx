@@ -114,7 +114,7 @@ function App() {
           alt="bg"
           style={{
             position: "absolute",
-            zIndex: -1
+            zIndex: 0
           }}
         />
       )}
