@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/interative-card-details-form/static/css/main.ee27db8f.css",
-    "main.js": "/interative-card-details-form/static/js/main.c79692e0.js",
-    "static/media/bg-main-desktop.png": "/interative-card-details-form/static/media/bg-main-desktop.806e7aa7b4dbc1d78bc3.png",
-    "static/media/bg-card-back.png": "/interative-card-details-form/static/media/bg-card-back.23f68fa3aa3d5b33dfc8.png",
-    "static/media/bg-card-front.png": "/interative-card-details-form/static/media/bg-card-front.8153e2ca184402a8385f.png",
-    "static/media/bg-main-mobile.png": "/interative-card-details-form/static/media/bg-main-mobile.caa4689407777a312ede.png",
-    "index.html": "/interative-card-details-form/index.html",
-    "static/media/icon-complete.svg": "/interative-card-details-form/static/media/icon-complete.8fd757c0c5c44b1d597ca411400e046d.svg",
-    "static/media/card-logo.svg": "/interative-card-details-form/static/media/card-logo.8ca9036515954c3f8191559dce9c7bdf.svg",
-    "main.ee27db8f.css.map": "/interative-card-details-form/static/css/main.ee27db8f.css.map",
-    "main.c79692e0.js.map": "/interative-card-details-form/static/js/main.c79692e0.js.map"
+    "main.css": "/interactive-card-details-form/static/css/main.ee27db8f.css",
+    "main.js": "/interactive-card-details-form/static/js/main.f64e35c2.js",
+    "static/media/bg-main-desktop.png": "/interactive-card-details-form/static/media/bg-main-desktop.806e7aa7b4dbc1d78bc3.png",
+    "static/media/bg-card-back.png": "/interactive-card-details-form/static/media/bg-card-back.23f68fa3aa3d5b33dfc8.png",
+    "static/media/bg-card-front.png": "/interactive-card-details-form/static/media/bg-card-front.8153e2ca184402a8385f.png",
+    "static/media/bg-main-mobile.png": "/interactive-card-details-form/static/media/bg-main-mobile.caa4689407777a312ede.png",
+    "index.html": "/interactive-card-details-form/index.html",
+    "static/media/icon-complete.svg": "/interactive-card-details-form/static/media/icon-complete.8fd757c0c5c44b1d597ca411400e046d.svg",
+    "static/media/card-logo.svg": "/interactive-card-details-form/static/media/card-logo.8ca9036515954c3f8191559dce9c7bdf.svg",
+    "main.ee27db8f.css.map": "/interactive-card-details-form/static/css/main.ee27db8f.css.map",
+    "main.f64e35c2.js.map": "/interactive-card-details-form/static/js/main.f64e35c2.js.map"
   },
   "entrypoints": [
     "static/css/main.ee27db8f.css",
-    "static/js/main.c79692e0.js"
+    "static/js/main.f64e35c2.js"
   ]
 }
