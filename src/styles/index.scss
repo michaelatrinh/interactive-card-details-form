@@ -1,0 +1,43 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: black;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  display: flex;
+
+  min-width: 375px;
+  max-width: 1440px;
+  height: 100vh;
+
+  background-color: white;
+
+  @include screen-mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include screen-desktop {
+    position: relative;
+    min-width: 1440px;
+    justify-content: center;
+  }
+}
