@@ -1,3 +1,6 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -14,8 +17,15 @@ code {
 
 #root {
   display: flex;
-  flex-direction: column;
-  align-items: center;
 
   height: 100vh;
+
+  @include screen-mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include screen-desktop {
+    justify-content: center;
+  }
 }

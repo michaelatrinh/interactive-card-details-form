@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer, useState } from "react";
 import "./styles/App.scss";
 import BgMobile from "./images/bg-main-mobile.png";
+import BgDesktop from "./images/bg-main-desktop.png";
 
 import Form from "./components/form";
 import { invalidMsgs } from "./components/form";
@@ -83,29 +84,44 @@ function reducer(state: string | number, action: any) {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [confirmed, setConfirmed] = useState<boolean>(false);
-
-  useEffect(() => {}, [state]);
+  const [isDesktop, setIsDesktop] = useState<boolean>(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
     setConfirmed(true);
   }
 
+  useEffect(() => {
+    if (window.innerWidth === 1440) setIsDesktop(true);
+  }, []);
+
   return (
     <React.Fragment>
-      <img
-        src={BgMobile}
-        alt="bg"
-        style={{
-          position: "absolute",
-          zIndex: -1
-        }}
-      />
+      {isDesktop ? (
+        <img
+          src={BgDesktop}
+          alt="bg"
+          style={{
+            position: "absolute",
+            left: 0,
+            zIndex: -1
+          }}
+        />
+      ) : (
+        <img
+          src={BgMobile}
+          alt="bg"
+          style={{
+            position: "absolute",
+            zIndex: -1
+          }}
+        />
+      )}
 
       <Cards />
 
       {confirmed ? (
-        <ThankYou handleBtnClick={() => setConfirmed(false)} />
+        <ThankYou handleBtnClick={() => window.location.reload()} />
       ) : (
         <Form
           handleSubmit={(e) => handleSubmit(e)}

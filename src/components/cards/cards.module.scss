@@ -9,12 +9,22 @@
   font-family: $typography-main-font;
   font-size: $typography-body-size;
   color: $neutral-white;
+
+  @include screen-desktop {
+    left: 1.5rem;
+  }
 }
 
 .cardsWrapper {
   position: relative;
   width: 100vw;
   height: 40vh;
+
+  @include screen-desktop {
+    width: 33vw;
+    height: 66vh;
+    left: -15rem;
+  }
 
   .cardFrontWrapper {
     z-index: 3;
@@ -23,6 +33,12 @@
     left: 1rem;
     width: 75vw;
     height: 100%;
+
+    @include screen-desktop {
+      width: 100%;
+      left: -7rem;
+      bottom: 18rem;
+    }
 
     .cardFront {
       position: relative;
@@ -40,18 +56,34 @@
         bottom: 33%;
         left: 1rem;
         width: 3.5rem;
+
+        @include screen-desktop {
+          bottom: 32%;
+          left: 1.5rem;
+          width: 5rem;
+        }
       }
 
       .creditCardNumber {
         @extend %creditCardFrontLeft;
         bottom: 3rem;
         font-size: 22.33px;
+
+        @include screen-desktop {
+          font-size: 38.75px;
+          bottom: 5rem;
+        }
       }
 
       .creditCardName {
         @extend %creditCardFrontLeft;
         bottom: 1rem;
         font-size: 12px;
+
+        @include screen-desktop {
+          bottom: 1.5rem;
+          font-size: 20px;
+        }
       }
 
       .creditCardMMYY {
@@ -62,6 +94,13 @@
         font-family: $typography-main-font;
         font-size: 12px;
         color: $neutral-white;
+
+        @include screen-desktop {
+          bottom: 1.5rem;
+          right: 1.5rem;
+
+          font-size: 20px;
+        }
       }
     }
   }
@@ -74,10 +113,21 @@
     width: 75vw;
     height: 100%;
 
+    @include screen-desktop {
+      width: 100%;
+      right: 0;
+      top: 18rem;
+      height: auto;
+    }
+
     .cardBack {
       position: relative;
       width: 100%;
       height: 100%;
+
+      @include screen-desktop {
+        height: auto;
+      }
 
       img {
         position: absolute;
@@ -93,6 +143,13 @@
         font-family: $typography-main-font;
         font-size: 12px;
         color: $neutral-white;
+
+        @include screen-desktop {
+          top: 10.2rem;
+          right: 4rem;
+
+          font-size: 20px;
+        }
       }
     }
   }
