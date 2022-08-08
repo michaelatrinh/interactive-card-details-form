@@ -8,6 +8,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: black;
 }
 
 code {
@@ -18,7 +24,11 @@ code {
 #root {
   display: flex;
 
+  min-width: 375px;
+  max-width: 1440px;
   height: 100vh;
+
+  background-color: white;
 
   @include screen-mobile {
     flex-direction: column;
@@ -26,6 +36,8 @@ code {
   }
 
   @include screen-desktop {
+    position: relative;
+    min-width: 1440px;
     justify-content: center;
   }
 }

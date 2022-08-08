@@ -18,11 +18,11 @@
 .cardsWrapper {
   position: relative;
   width: 100vw;
-  height: 40vh;
+  height: 40%;
 
   @include screen-desktop {
-    width: 33vw;
-    height: 66vh;
+    width: 33%;
+    height: 66%;
     left: -15rem;
   }
 
